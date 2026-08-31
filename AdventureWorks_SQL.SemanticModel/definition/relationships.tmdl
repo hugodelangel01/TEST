@@ -1,0 +1,62 @@
+relationship 37e4885a-98e6-4b7a-86cb-6b17405c6511
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimProduct.StartDate
+	toColumn: LocalDateTable_84be35c5-b336-439b-8ad4-a2de4dede4ec.Date
+
+relationship f9ec51d4-6a57-42a9-83e3-facff17cb1d0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimProduct.EndDate
+	toColumn: LocalDateTable_99463919-b75b-4309-91d4-27491fa55b2a.Date
+
+relationship a577449a-9d06-4c92-852c-16ac036f68db
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.FullDateAlternateKey
+	toColumn: LocalDateTable_9eb61fa0-bf57-4f91-8f16-a33dba246719.Date
+
+relationship 487acf15-34e3-40cd-bfe4-399b561c9ccf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactInternetSales.OrderDate
+	toColumn: LocalDateTable_03e6ed05-f3f0-4ca8-827e-d26dfdad45c6.Date
+
+relationship 39a583b9-6b64-47ba-80d4-9fc4bfb17a1b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactInternetSales.DueDate
+	toColumn: LocalDateTable_05635579-161c-49d1-8d98-6dbb42e2e587.Date
+
+relationship 14941688-3dc0-4ec4-a1f5-4a503cd70f62
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactInternetSales.ShipDate
+	toColumn: LocalDateTable_3f7c2ef3-ec03-4628-b365-661b246fa5b9.Date
+
+relationship f870ae64-3638-4477-9a1c-7d8713e51cc0
+	fromColumn: FactInternetSales.ProductKey
+	toColumn: DimProduct.ProductKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 341df13c-c4da-49de-a168-34daa171c70a
+	fromColumn: FactInternetSales.DueDateKey
+	toColumn: DimDate.DateKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship bc15cf23-dfe0-4bbe-b313-3f85dc22664a
+	isActive: false
+	fromColumn: FactInternetSales.OrderDateKey
+	toColumn: DimDate.DateKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 6691bd14-6ff0-4208-a727-4c4a3fdb8c36
+	isActive: false
+	fromColumn: FactInternetSales.ShipDateKey
+	toColumn: DimDate.DateKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 42879a73-0b20-4ac9-b629-80ba5638992c
+	fromColumn: FactInternetSales.SalesTerritoryKey
+	toColumn: DimSalesTerritory.SalesTerritoryKey
+
+	annotation PBI_IsFromSource = FS
+

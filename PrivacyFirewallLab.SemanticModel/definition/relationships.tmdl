@@ -1,0 +1,19 @@
+relationship AutoDetected_26a7ba2b-33da-43ed-9a2a-e7038c0da54c
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Rates.DistID
+	toColumn: Distributions.DistID
+
+relationship AutoDetected_aa07ee8e-5756-4efd-beea-c6a49dda68e8
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: DistribucionesBase.Tittle
+	toColumn: Distributions.Tittle
+
+relationship AutoDetected_37eabb76-1597-48fa-8744-910832e8004b
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Rates.DistID
+	toColumn: DistribucionesBase.DistID
+

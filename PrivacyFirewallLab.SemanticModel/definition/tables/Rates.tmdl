@@ -1,0 +1,47 @@
+table Rates
+	lineageTag: 0b2aa868-0119-4bb2-8ba8-b3baf624e06f
+
+	column DistID
+		dataType: string
+		lineageTag: f1d3ff27-370e-4735-b4b5-66b3155dc08d
+		summarizeBy: none
+		sourceColumn: DistID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate
+		dataType: double
+		lineageTag: 8e102509-663d-4889-a36c-ef44f33f6037
+		summarizeBy: sum
+		sourceColumn: Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Currency
+		dataType: string
+		lineageTag: 2d3c74d3-db07-48da-88a3-3cc623f44692
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Rates = m
+		mode: import
+		source =
+				let
+				    PrimerID = DistribucionesBase{0}[DistID],
+				    Origen = Sql.Database("delangelazure.database.windows.net", "azuresql"),
+				    Consulta = Value.NativeQuery(
+				        Origen,
+				        "SELECT * FROM dbo.LabRates WHERE DistID = @id",
+				        [id = PrimerID]
+				    )
+				in
+				    Consulta
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

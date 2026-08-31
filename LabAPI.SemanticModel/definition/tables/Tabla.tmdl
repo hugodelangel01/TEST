@@ -1,0 +1,31 @@
+table Tabla
+	lineageTag: 5950000e-32e7-41ef-94db-b4d7e0a65966
+
+	column Product
+		dataType: string
+		lineageTag: 989a6eb6-aee1-46ae-89ea-042f32eeef64
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: 49195159-c6e5-44bf-be86-7eb27554a8e5
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tabla = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WclTSUTI0MFCK1YlWcgKyjaBsZ5C4KZAdCwA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Product = _t, Sales = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Product", type text}, {"Sales", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

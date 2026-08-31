@@ -1,0 +1,43 @@
+{
+  "config": "{\"version\":\"5.73\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU05\",\"version\":{\"visual\":\"2.9.0\",\"report\":\"3.3.0\",\"page\":\"2.3.1\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU05",
+            "path": "BaseThemes/CY26SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "7ee991fcedc0b81ff75b",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"3bd0421320151b3ddcca\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.20242914979757,\"y\":0,\"z\":0,\"width\":1058.8663967611335,\"height\":402.99595141700405,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"stackedAreaChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(SalesLT Product.ProductCategoryID)\"},{\"queryRef\":\"CountNonNull(SalesLT SalesOrderDetail.SalesOrderDetailID)\"},{\"queryRef\":\"Sum(SalesLT SalesOrderDetail.LineTotal)\"}],\"Category\":[{\"queryRef\":\"SalesLT SalesOrderDetail.ProductID\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SalesLT Product\",\"Type\":0},{\"Name\":\"s1\",\"Entity\":\"SalesLT SalesOrderDetail\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ProductCategoryID\"}},\"Function\":5},\"Name\":\"CountNonNull(SalesLT Product.ProductCategoryID)\",\"NativeReferenceName\":\"Count of ProductCategoryID\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"SalesOrderDetailID\"}},\"Function\":5},\"Name\":\"CountNonNull(SalesLT SalesOrderDetail.SalesOrderDetailID)\",\"NativeReferenceName\":\"Count of SalesOrderDetailID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"ProductID\"},\"Name\":\"SalesLT SalesOrderDetail.ProductID\",\"NativeReferenceName\":\"ProductID\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"LineTotal\"}},\"Function\":0},\"Name\":\"Sum(SalesLT SalesOrderDetail.LineTotal)\",\"NativeReferenceName\":\"Sum of LineTotal\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ProductCategoryID\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 403.00,
+          "queryBinary": "H4sIAAAAAAAEALVUUU/CMBD+K6RPmjSEob7sTQcYIyIywovhoRnHrNnapWsNZNl/91omLGNLNOrTetf7vvu+a3YFCWSaMrHJif9akBDwrHn0YkDtR0yz8I1lUJUQvyDuwh5WoHIuBfGHlEyUTB18xlIgPskJJWOk0VhJQpZAPl325kpuTKTxarnPsGpQ0hPAa0O477PagBqBZjypQdcUpSaAdLbtbRwriJl2egoy3mUK8ryKApmYtCUfSqMiWMD2FDjpZUkJas1AOTGV7IBpiKXaP4xcwcSI6NDuBqPKRSCN0DMpZiZJLhq2+2c8l8QCNf+wGkCBiKDO05PbXktv+rduvabd5sx/7LdJ0D9n/IbzNhn09+6qgTq2Lxedwk/FXXLrdP/8LlMuYCk1SxrPMagZMWn3Kxzx3cNHvB19rdMaye+42HARW3lzxVN2+PvvlTQZpg9bA3W+gxNk4wH16JBerR3c7pAF2ClVhm1iZYeBLa9pnTNkaZZgtiitxeN+8TAY7yAyluEJtOJR/sjtNvJKbPEJMliNxsEEAAA=",
+          "width": 1058.87,
+          "x": 10.20,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

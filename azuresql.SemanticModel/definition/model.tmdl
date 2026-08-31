@@ -1,0 +1,30 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["SalesLT Customer","SalesLT Product","SalesLT SalesOrderHeader","SalesLT SalesOrderDetail"]
+
+ref table 'SalesLT Customer'
+ref table DateTableTemplate_cef8fed2-f607-4720-bf48-021968309d9c
+ref table LocalDateTable_fbbc5cbc-8b1f-4790-8066-f00cd9afaa7c
+ref table 'SalesLT Product'
+ref table LocalDateTable_e580b562-7617-4b92-ba7f-4abccd908b9e
+ref table LocalDateTable_be25263a-c5c5-40b2-aa78-f1b2edc6dd4f
+ref table LocalDateTable_a449f263-a272-489b-a0d1-0cd870662078
+ref table LocalDateTable_6aadfe85-3ca7-4184-8617-2eafb9ba3f04
+ref table 'SalesLT SalesOrderHeader'
+ref table LocalDateTable_fae84f50-8385-48fb-ba1b-c7c5e5cfa794
+ref table LocalDateTable_1895d8ab-7f6b-4051-a6f6-87ba24efbcc2
+ref table LocalDateTable_1d35720f-e4a2-4cff-8837-b27d56a4d2c2
+ref table LocalDateTable_eecb6074-644c-432d-abe9-8be86e9c7cf2
+ref table 'SalesLT SalesOrderDetail'
+ref table LocalDateTable_e8b80732-5842-4921-9448-4460aca03401
+
+ref cultureInfo en-US
+

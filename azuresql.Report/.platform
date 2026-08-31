@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "azuresql"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5db7c0bf-7d0d-a993-4372-4bc74e6838d5"
+  }
+}

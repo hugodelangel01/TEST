@@ -1,0 +1,142 @@
+table 'SalesLT Customer'
+	lineageTag: f860f35b-6fb9-4d5c-9771-34fba9ca2224
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: 642c2ce1-99b4-44a2-a8bc-fcea90b9dc7e
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameStyle
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0092fca3-16bd-4133-8a4d-7ceca039d880
+		summarizeBy: none
+		sourceColumn: NameStyle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 2dc8dcf1-b0b7-45a8-820f-414de75b505c
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 27df0685-19b8-4865-b902-b2fca38a7ace
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleName
+		dataType: string
+		lineageTag: f02a088c-66c2-46e6-87c5-cd8083e340de
+		summarizeBy: none
+		sourceColumn: MiddleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 4c2da342-9590-45d6-8f89-0b0fcd56c003
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Suffix
+		dataType: string
+		lineageTag: b47877ee-95f1-44ab-9ece-5eaf05d1e1c7
+		summarizeBy: none
+		sourceColumn: Suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyName
+		dataType: string
+		lineageTag: 15024e6e-3b2b-462a-ae9e-81270b6313c9
+		summarizeBy: none
+		sourceColumn: CompanyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesPerson
+		dataType: string
+		lineageTag: b4c4996c-d651-4f5d-8fe6-58da5fb505c6
+		summarizeBy: none
+		sourceColumn: SalesPerson
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: 356410e2-27ae-4b0d-a514-90ffd658355f
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 9b3bb2aa-f96c-442c-8ea9-786f82bd189a
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column PasswordHash
+		dataType: string
+		lineageTag: f2603a3d-432f-4d6a-818d-75201fb842f2
+		summarizeBy: none
+		sourceColumn: PasswordHash
+
+		annotation SummarizationSetBy = Automatic
+
+	column PasswordSalt
+		dataType: string
+		lineageTag: a5394b9f-39b3-42f7-812d-19572d30ad77
+		summarizeBy: none
+		sourceColumn: PasswordSalt
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: 3781c89e-7c69-4380-a158-d33938412443
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 56a8a77a-c38b-4b41-aa32-83a570ea163c
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		variation Variation
+			isDefault
+			relationship: d0e3bfbb-c8ef-4e6e-8b3d-17202fbcf279
+			defaultHierarchy: LocalDateTable_fbbc5cbc-8b1f-4790-8066-f00cd9afaa7c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SalesLT Customer' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("delangelazure.database.windows.net", "azuresql"),
+				    SalesLT_Customer = Source{[Schema="SalesLT",Item="Customer"]}[Data]
+				in
+				    SalesLT_Customer
+
+	annotation PBI_ResultType = Table
+

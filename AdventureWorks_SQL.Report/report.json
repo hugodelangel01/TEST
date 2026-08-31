@@ -1,0 +1,43 @@
+{
+  "config": "{\"version\":\"5.73\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU05\",\"version\":{\"visual\":\"2.9.0\",\"report\":\"3.3.0\",\"page\":\"2.3.1\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU05",
+            "path": "BaseThemes/CY26SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "937d2e7f93e7e2d62943",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"5c36ce114ff074c4baa8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":297.32793522267207,\"y\":94.73684210526315,\"z\":0,\"width\":488.2591093117409,\"height\":402.99595141700405,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(FactInternetSales.SalesAmount)\"}],\"Category\":[{\"queryRef\":\"DimSalesTerritory.SalesTerritoryRegion\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FactInternetSales\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DimSalesTerritory\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"SalesAmount\"}},\"Function\":0},\"Name\":\"Sum(FactInternetSales.SalesAmount)\",\"NativeReferenceName\":\"Sum of SalesAmount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"SalesTerritoryRegion\"},\"Name\":\"DimSalesTerritory.SalesTerritoryRegion\",\"NativeReferenceName\":\"SalesTerritoryRegion\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"SalesAmount\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 403.00,
+          "queryBinary": "H4sIAAAAAAAEAMWTTU/DMAyG/8qUE0jR1CJOve0TIQSMdRoHtEOUeiVoSSo3Aaaq/50k7dZNKwdO3GLHr/3Ejisy0VIylZUkeatICu5sBH+xgPspMyx9ZwW0ISSpSLjwhzVgKbQiyQ0lc9QyyJ+YBJKQLaFk5tIYF0nmjJt7ZQAVmJTtoHSXq33h4qKaHiXZqWQqZIhcAaIw2hXsJBvqIHfATSg4ynOEnJlAUpHZd4FQlq010Tsre/yptshhCdvOCNB1TckCdQEYKALCSGqrTLiaW8WbQg78wJ1aeXXxwuGJ9Jr4WCM+fUFAUBw66UBvB2dl6F+ps17qY+OWkHt5x3vR2mGv4Ffm3uxuJs+YAY73YShTgdB2yn2O81f818DqeuM8Y6EyoXKfZoFCsuYr36G2hXM3K+ASfjT43o5ovAlSvwxLyCw/oHvH2gM7llt6mu/VVdFfzYM8SxJHkSeg3dLEtW8McOuzPYJBwcsH4Vcs9qQ/Lr+WUpYDAAA=",
+          "width": 488.26,
+          "x": 297.33,
+          "y": 94.74,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

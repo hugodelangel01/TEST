@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "PrivacyFirewallLab"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4352c6ae-00fc-994b-49e5-d3d039cb9d56"
+  }
+}

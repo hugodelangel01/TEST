@@ -1,0 +1,61 @@
+table Distributions
+	lineageTag: c0e357b3-9c79-4b48-8c8f-195ab2ce78cf
+
+	column Tittle
+		dataType: string
+		lineageTag: 2739e6ff-27f0-4f72-8c5d-4ba12a668075
+		summarizeBy: none
+		sourceColumn: Tittle
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistID
+		dataType: string
+		lineageTag: 2ee94adb-76e4-41dc-9ff9-efb864c37084
+		summarizeBy: none
+		sourceColumn: DistID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 01f7b568-a3ef-44f5-aa3f-1bfb9e2b0f6a
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner
+		dataType: string
+		lineageTag: ed286e89-8470-467c-a775-1e79bbdc44c8
+		summarizeBy: none
+		sourceColumn: Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rates.Rate'
+		dataType: double
+		lineageTag: 83d1e375-462c-47a4-ae69-83022fdc5177
+		summarizeBy: sum
+		sourceColumn: Rates.Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Distributions = m
+		mode: import
+		source =
+				let
+				    Origen = SharePoint.Tables("https://mngenvmcap264706.sharepoint.com/sites/LabPrivacyFirewall", [Implementation="2.0", ViewMode="All"]),
+				    #"df4aa5bd-7c58-47fb-bcec-30b15b8c21a5" = Origen{[Id="df4aa5bd-7c58-47fb-bcec-30b15b8c21a5"]}[Items],
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"df4aa5bd-7c58-47fb-bcec-30b15b8c21a5",{"Tittle", "DistID", "Region", "Owner"}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Otras columnas quitadas", {"DistID"}, Rates, {"DistID"}, "Rates", JoinKind.LeftOuter),
+				    #"Se expandió Rates" = Table.ExpandTableColumn(#"Consultas combinadas", "Rates", {"Rate"}, {"Rates.Rate"})
+				in
+				    #"Se expandió Rates"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

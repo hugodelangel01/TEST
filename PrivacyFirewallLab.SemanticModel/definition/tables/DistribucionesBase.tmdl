@@ -1,0 +1,49 @@
+table DistribucionesBase
+	lineageTag: 8b9d8dee-55cf-4aa3-80a8-95f25e1029f3
+
+	column Tittle
+		dataType: string
+		lineageTag: 0d38b5ec-4c2c-4995-be87-afc51d42c8bb
+		summarizeBy: none
+		sourceColumn: Tittle
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistID
+		dataType: string
+		lineageTag: c0a89007-8fc6-4bb1-9718-a35913af9989
+		summarizeBy: none
+		sourceColumn: DistID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 08fa38cd-9ab5-4a6d-a4bb-3c41c4850749
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner
+		dataType: string
+		lineageTag: a88d582c-c2ea-48d5-bbfd-75ac24335d05
+		summarizeBy: none
+		sourceColumn: Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DistribucionesBase = m
+		mode: import
+		source =
+				let
+				    Origen = SharePoint.Tables("https://mngenvmcap264706.sharepoint.com/sites/LabPrivacyFirewall", [Implementation="2.0", ViewMode="All"]),
+				    #"df4aa5bd-7c58-47fb-bcec-30b15b8c21a5" = Origen{[Id="df4aa5bd-7c58-47fb-bcec-30b15b8c21a5"]}[Items],
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"df4aa5bd-7c58-47fb-bcec-30b15b8c21a5",{"Tittle", "DistID", "Region", "Owner"})
+				in
+				    #"Otras columnas quitadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

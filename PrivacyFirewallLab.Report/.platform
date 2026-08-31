@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "PrivacyFirewallLab"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ed4293a6-a4c5-9a48-4003-b9a782d59cea"
+  }
+}
